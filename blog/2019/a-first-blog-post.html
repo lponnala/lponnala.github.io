@@ -105,24 +105,21 @@ Lalit Ponnala            </a>
 <p><strong>Altair visualization</strong></p>
 <div id="vis"></div>
 
-<script>
-  (function(vegaEmbed) {
-    var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "vconcat": [{"hconcat": [{"mark": {"type": "point", "filled": true}, "encoding": {"tooltip": {"type": "nominal", "field": "Title"}, "x": {"type": "quantitative", "field": "Worldwide_Gross", "scale": {"clamp": true, "domain": [100000, 1000000000]}}, "y": {"type": "quantitative", "field": "IMDB_Rating"}}, "height": 200, "selection": {"Release Year_": {"type": "single", "bind": {"input": "range", "max": 2018, "min": 1969, "step": 1}, "fields": ["Release_Year"]}}, "title": "Slider Filtering", "transform": [{"calculate": "floor(datum.IMDB_Rating)", "as": "Rounded_IMDB_Rating"}, {"calculate": "datum.Production_Budget > 100000000.0 ? 100 : 10", "as": "Hundred_Million_Production"}, {"calculate": "year(datum.Release_Date)", "as": "Release_Year"}, {"filter": "(datum.IMDB_Rating > 0)"}, {"filter": {"field": "MPAA_Rating", "oneOf": ["G", "NC-17", "PG", "PG-13", "R"]}}, {"filter": {"selection": "Release Year_"}}], "width": 200}, {"mark": {"type": "point", "filled": true}, "encoding": {"tooltip": {"type": "nominal", "field": "Title"}, "x": {"type": "quantitative", "field": "Worldwide_Gross", "scale": {"clamp": true, "domain": [100000, 1000000000]}}, "y": {"type": "quantitative", "field": "IMDB_Rating"}}, "height": 200, "selection": {"Genre": {"type": "single", "fields": ["Major_Genre"], "bind": {"input": "select", "options": ["Action", "Adventure", "Black Comedy", "Comedy", "Concert/Performance", "Documentary", "Drama", "Horror", "Musical", "Romantic Comedy", "Thriller/Suspense", "Western"]}}}, "title": "Dropdown Filtering", "transform": [{"calculate": "floor(datum.IMDB_Rating)", "as": "Rounded_IMDB_Rating"}, {"calculate": "datum.Production_Budget > 100000000.0 ? 100 : 10", "as": "Hundred_Million_Production"}, {"calculate": "year(datum.Release_Date)", "as": "Release_Year"}, {"filter": "(datum.IMDB_Rating > 0)"}, {"filter": {"field": "MPAA_Rating", "oneOf": ["G", "NC-17", "PG", "PG-13", "R"]}}, {"filter": {"selection": "Genre"}}], "width": 200}]}, {"hconcat": [{"mark": {"type": "point", "filled": true}, "encoding": {"color": {"condition": {"type": "nominal", "field": "MPAA_Rating", "legend": null, "selection": "Rating"}, "value": "lightgray"}, "tooltip": {"type": "nominal", "field": "Title"}, "x": {"type": "quantitative", "field": "Worldwide_Gross", "scale": {"clamp": true, "domain": [100000, 1000000000]}}, "y": {"type": "quantitative", "field": "IMDB_Rating"}}, "height": 200, "selection": {"Rating": {"type": "single", "fields": ["MPAA_Rating"], "bind": {"input": "radio", "options": ["G", "NC-17", "PG", "PG-13", "R"]}}}, "title": "Radio Button Highlighting", "transform": [{"calculate": "floor(datum.IMDB_Rating)", "as": "Rounded_IMDB_Rating"}, {"calculate": "datum.Production_Budget > 100000000.0 ? 100 : 10", "as": "Hundred_Million_Production"}, {"calculate": "year(datum.Release_Date)", "as": "Release_Year"}, {"filter": "(datum.IMDB_Rating > 0)"}, {"filter": {"field": "MPAA_Rating", "oneOf": ["G", "NC-17", "PG", "PG-13", "R"]}}], "width": 200}, {"mark": {"type": "point", "filled": true}, "encoding": {"size": {"type": "quantitative", "condition": {"value": 25, "selection": "Big Budget Films"}, "field": "Hundred_Million_Production"}, "tooltip": {"type": "nominal", "field": "Title"}, "x": {"type": "quantitative", "field": "Worldwide_Gross", "scale": {"clamp": true, "domain": [100000, 1000000000]}}, "y": {"type": "quantitative", "field": "IMDB_Rating"}}, "height": 200, "selection": {"Big Budget Films": {"type": "single", "bind": {"input": "checkbox"}}}, "title": "Checkbox Formatting", "transform": [{"calculate": "floor(datum.IMDB_Rating)", "as": "Rounded_IMDB_Rating"}, {"calculate": "datum.Production_Budget > 100000000.0 ? 100 : 10", "as": "Hundred_Million_Production"}, {"calculate": "year(datum.Release_Date)", "as": "Release_Year"}, {"filter": "(datum.IMDB_Rating > 0)"}, {"filter": {"field": "MPAA_Rating", "oneOf": ["G", "NC-17", "PG", "PG-13", "R"]}}], "width": 200}]}], "data": {"url": "https://vega.github.io/vega-datasets/data/movies.json", "format": {"parse": {"Release_Date": "date"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.0.0.json"};
-    var embedOpt = {"mode": "vega-lite"};
+<script type="text/javascript">
+var spec = {"config":{"view":{"width":400,"height":300}},"data":{"url":"https://vega.github.io/vega-datasets/data/cars.json","format":{"type":"json"}},"mark":"point","encoding":{"x":{"type":"quantitative","field":"Horsepower"},"y":{"type":"quantitative","field":"Miles_per_Gallon"}},"$schema":"https://vega.github.io/schema/vega-lite/v2.4.3.json"};
+var embed_opt = {"mode": "vega-lite"};
 
-    function showError(el, error){
-        el.innerHTML = ('<div class="error" style="color:red;">'
-                        + '<p>JavaScript Error: ' + error.message + '</p>'
-                        + "<p>This usually means there's a typo in your chart specification. "
-                        + "See the javascript console for the full traceback.</p>"
-                        + '</div>');
-        throw error;
-    }
-    const el = document.getElementById('vis');
-    vegaEmbed("#vis", spec, embedOpt)
-      .catch(error => showError(el, error));
-  })(vegaEmbed);
-
+function showError(el, error){
+el.innerHTML = ('<div class="error">'
++ '<p>JavaScript Error: ' + error.message + '</p>'
++ "<p>This usually means there's a typo in your chart specification. "
++ "See the javascript console for the full traceback.</p>"
++ '</div>');
+throw error;
+}
+const el = document.getElementById('vis1');
+vegaEmbed("#vis", spec, embed_opt)
+.catch(error => showError(el, error));
 </script>
             </div>
             <!-- /.entry-content -->
