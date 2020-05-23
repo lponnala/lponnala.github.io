@@ -136,26 +136,6 @@ vegaEmbed("#vis", spec, embed_opt)
 .catch(error => showError(el, error));
 </script>
 
-<p><strong>Altair interactive: cars</strong></p>
-<div id="vis0"></div>
-
-<script type="text/javascript">
-var spec0 = {"config": {"view": {"width": 400, "height": 300}}, "hconcat": [{"data": {"url": "https://vega.github.io/vega-datasets/data/cars.json"}, "mark": "circle", "encoding": {"color": {"type": "nominal", "field": "Origin", "legend": null}, "size": {"type": "ordinal", "field": "Cylinders", "scale": {"range": [20, 100]}}, "tooltip": [{"type": "nominal", "field": "Name"}, {"type": "quantitative", "field": "Horsepower"}, {"type": "quantitative", "field": "Miles_per_Gallon"}, {"type": "ordinal", "field": "Cylinders"}, {"type": "nominal", "field": "Origin"}], "x": {"type": "quantitative", "field": "Horsepower"}, "y": {"type": "quantitative", "field": "Miles_per_Gallon"}}, "selection": {"selector005": {"type": "interval", "bind": "scales", "encodings": ["x", "y"]}}, "transform": [{"filter": {"selection": "selector004"}}]}, {"data": {"url": "https://vega.github.io/vega-datasets/data/cars.json"}, "mark": "rect", "encoding": {"color": {"condition": {"type": "nominal", "field": "Origin", "legend": null, "selection": "selector004"}, "value": "lightgray"}, "size": {"value": 250}, "y": {"type": "nominal", "axis": {"title": "Select Origin"}, "field": "Origin"}}, "selection": {"selector004": {"type": "multi", "encodings": ["color"]}}}], "$schema": "https://vega.github.io/schema/vega-lite/v2.4.3.json"};
-var embed_opt0 = {"mode": "vega-lite"};
-
-function showError(el0, error){
-el0.innerHTML = ('<div class="error">'
-+ '<p>JavaScript Error: ' + error.message + '</p>'
-+ "<p>This usually means there's a typo in your chart specification. "
-+ "See the javascript console for the full traceback.</p>"
-+ '</div>');
-throw error;
-}
-const el0 = document.getElementById('vis0');
-vegaEmbed("#vis0", spec0, embed_opt0)
-.catch(error => showError(el0, error));
-</script>
-
 <p><strong>Altair interactive: stocks</strong></p>
 <div id="vis1"></div>
 
@@ -196,7 +176,7 @@ vegaEmbed("#vis2", spec2, embed_opt2)
 .catch(error => showError(el2, error));
 </script>
 
-<p><strong>Altair interactive: timeseries</strong></p>
+<p><strong>Altair interactive: cars</strong></p>
 <div id="vis3"></div>
 
 <script>
