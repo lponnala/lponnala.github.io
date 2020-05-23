@@ -197,29 +197,6 @@ vegaEmbed("#vis2", spec2, embed_opt2)
 </script>
 
 <p><strong>Altair interactive: timeseries</strong></p>
-<p>Based on this URL: https://vega.github.io/vega-lite/usage/embed.html</p>
-<p>Edit this:
-/home/lponnala/repos/website/themes/lp-bootstrap3/templates/article.html</p>
-<p>Under {% block meta %}, add this:</p>
-<div class="highlight"><pre><span></span>    <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="err">&#39;</span><span class="n">vega</span><span class="err">&#39;</span> <span class="k">in</span> <span class="n">article</span><span class="p">.</span><span class="n">include</span> <span class="o">%</span><span class="p">}</span>
-    <span class="o">&lt;</span><span class="n">style</span><span class="o">&gt;</span>
-    <span class="p">.</span><span class="n">vega</span><span class="o">-</span><span class="n">actions</span> <span class="n">a</span> <span class="p">{</span>
-        <span class="n">margin</span><span class="o">-</span><span class="nl">right</span><span class="p">:</span> <span class="mi">12</span><span class="n">px</span><span class="p">;</span>
-        <span class="nl">color</span><span class="p">:</span> <span class="err">#</span><span class="mi">757575</span><span class="p">;</span>
-        <span class="n">font</span><span class="o">-</span><span class="nl">weight</span><span class="p">:</span> <span class="n">normal</span><span class="p">;</span>
-        <span class="n">font</span><span class="o">-</span><span class="nl">size</span><span class="p">:</span> <span class="mi">13</span><span class="n">px</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="p">.</span><span class="n">error</span> <span class="p">{</span>
-        <span class="nl">color</span><span class="p">:</span> <span class="n">red</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="o">&lt;/</span><span class="n">style</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/vega@5&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/vega-lite@4&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/vega-embed@6&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
-    <span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
-</pre></div>
-
-
 <div id="vis3"></div>
 
 <script>
